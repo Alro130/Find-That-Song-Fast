@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find That Song Fast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="logo">
+    <img src="YOUR_LOGO_URL" class="logo-img">
+    <span>Find That Song Fast</span>
+  </div>
+
+  <div class="nav-buttons">
+    <div id="creditsDisplay"></div>
+    <button class="premium-btn" onclick="openPremium()">👑 Get Premium</button>
+    <button class="signin-btn" onclick="openSignIn()">Sign In</button>
+  </div>
+</div>
+
+<div class="page-content">
+
+  <div class="search-container">
+    <input id="lyricsInput" placeholder="Enter lyrics..." />
+    <button onclick="searchSong()">Search</button>
+  </div>
+
+  <div id="results"></div>
+
+</div>
+
+<!-- PREMIUM -->
+<div id="premiumModal" class="modal hidden">
+  <div class="modal-content">
+
+    <h2>👑 Get Premium</h2>
+
+    <input type="text" placeholder="Email" />
+    <input type="password" placeholder="Password" />
+
+    <div class="plan-row">
+      <div class="plan-card selected" data-plan="monthly" onclick="selectPlan(this)">
+        <strong>Monthly</strong>
+        <span>$9.99</span>
+      </div>
+
+      <div class="plan-card" data-plan="annual" onclick="selectPlan(this)">
+        <strong>Annual</strong>
+        <span>$120</span>
+      </div>
+    </div>
+
+    <button class="create-btn" onclick="createPremium()">Activate</button>
+    <button class="close-btn" onclick="closePremium()">Cancel</button>
+
+  </div>
+</div>
+
+<!-- SIGN IN -->
+<div id="signInModal" class="modal hidden">
+  <div class="modal-content">
+
+    <h2>🔐 Sign In</h2>
+
+    <input id="loginEmail" type="text" placeholder="Email" />
+    <input id="loginPassword" type="password" placeholder="Password" />
+
+    <button class="create-btn" onclick="signIn()">Sign In</button>
+    <button class="close-btn" onclick="closeSignIn()">Cancel</button>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
